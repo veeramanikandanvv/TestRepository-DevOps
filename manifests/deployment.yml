@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "kubecluster-f2ce"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "kubecluster-f2ce"
+    spec:
+      containers:
+        - name: "kubecluster-f2ce"
+          image: "fiservdevopstest.azurecr.io/kubecluster"
+          ports:
+          - containerPort: 2222
